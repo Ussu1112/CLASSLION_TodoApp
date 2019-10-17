@@ -11,13 +11,13 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     headercontainer:{
-        marginTop : 50,
+        marginTop : 80,
         marginBottom:50,
     },
     headertext:{
-        fontSize: 20,
+        fontSize: 40,
         fontWeight:'bold',
-        color: '#ccc',
+        color: '#000',
     },
 });
 

@@ -77,21 +77,20 @@ export default class App extends React.Component {
           <Header/>
         </View>
         <View style={styles.subtitleposition}>
-          <Subtitle title="해야 할 일"/>
+          <Subtitle title="To Do"/>
           <Input
             value = {this.state.inputValue}
             changeText={this._changeText}
             addTodo={this._addTodoItem}/>
         </View>
         <View style={styles.subtitleposition}>
-          <Subtitle title="해야 할 일 목록"/>
-          {/* <TodoItem name ="코딩하기"/>
-          <TodoItem name ="운동하기"/>
-          <TodoItem name ={this.state.todos[0].title}/> */}
+          <Subtitle title="To Do List"/>
           <FlatList
+          style = {styles.subtitle_layout}
           data={this.state.todos}
           renderItem={this._makeTodoItem} // 언더 스코어 _ = 클래스 안에 선언된 메서드
-          keyExtractor={(item,index) => { return `${index}`}}/>
+          keyExtractor={(item,index) => { return `${index}`}}
+          />
         </View>
       </View>
     );
@@ -105,9 +104,13 @@ const styles = StyleSheet.create({
   },
   headercenter:{
     alignItems: 'center',
-    borderWidth: 5,
   },
   subtitleposition:{
-    marginLeft:50,
-  }
+    marginLeft:20,
+    marginRight:20,
+  },
+  subtitle_layout:{
+    backgroundColor: '#eee',
+    overflow: 'scroll',
+  },
 });

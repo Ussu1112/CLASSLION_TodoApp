@@ -9,7 +9,7 @@ export default function Input({value,changeText,addTodo}){
             onEndEditing={addTodo}
 
             style ={styles.input}
-            placeholder="Todo List 추가하기"
+            placeholder="Todo List 추가하기 - 작성 후 Enter!"
             maxLength={50}
             returnKeyType="done"/>
     );
@@ -21,9 +21,9 @@ const styles = StyleSheet.create({
     input:{
         fontSize:17,
         fontWeight:'bold',
+        borderBottomWidth:1,
         marginTop:10,
-        marginBottom:20,
-        borderWidth:1,
-        width : width-80,
+        marginBottom:10,
+        width : width-40,
     },
 });

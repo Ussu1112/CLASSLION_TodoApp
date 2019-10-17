@@ -13,27 +13,30 @@ const TodoItem =({name, isComplete, changeComplete, deleteItem}) => (
             </TouchableOpacity>
 
             <Text style={styles.todoitem}>{name}</Text>
+            <TouchableOpacity onPress={deleteItem} style={styles.close}>            
+                <AntDesign name="close" size={20}/>
+            </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={deleteItem}>            
-            <AntDesign name="close" size={20}/>
-        </TouchableOpacity>
-
     </View>
 );
+
+
 
 const { width,height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     todoContainer:{
-        padding:5,
-        marginTop:20,
+        padding : 5,
+        marginTop: 10,
+        marginBottom : 5,
         borderBottomWidth:1,
-        width : width-80,
+        width : width-40,
         flexDirection:"row",
         alignItems:"center",
         justifyContent:"space-between",
     },
     todoitem:{
+        flex: 1,
         fontSize:20,
         fontWeight:"bold",
     },
@@ -42,6 +45,9 @@ const styles = StyleSheet.create({
     },
     check:{
         marginRight:10,
+    },
+    close:{
+        marginLeft:0,
     },
 })
 
