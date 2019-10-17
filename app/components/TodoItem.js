@@ -2,7 +2,7 @@ import React from "react"
 import { View, Text, StyleSheet, Dimensions,TouchableOpacity } from "react-native"
 import { AntDesign } from "@expo/vector-icons"
 
-const TodoItem =({name, isComplete, changeComplete}) => (
+const TodoItem =({name, isComplete, changeComplete, deleteItem}) => (
     <View style = {styles.todoContainer}>
         <View style={styles.makerow}>
             {/* <TouchableOpacity>
@@ -14,7 +14,7 @@ const TodoItem =({name, isComplete, changeComplete}) => (
 
             <Text style={styles.todoitem}>{name}</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={deleteItem}>            
             <AntDesign name="close" size={20}/>
         </TouchableOpacity>
 
@@ -22,7 +22,6 @@ const TodoItem =({name, isComplete, changeComplete}) => (
 );
 
 const { width,height } = Dimensions.get('window');
-
 
 const styles = StyleSheet.create({
     todoContainer:{

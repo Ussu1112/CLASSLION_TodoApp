@@ -1,17 +1,21 @@
 import React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import { TextInput, StyleSheet, Dimensions } from 'react-native';
 
-const Input = ({value,chaneText,addTodo}) => (
-    <TextInput
-    value={value}
-    style ={styles.input}
-    placeorder={"입력공간"}
-    maxLength={30}
-    onChangeText={chaneText}
-    onEndEditing={addTodo}
-    returnKeyType="done"/>
-);
+export default function Input({value,changeText,addTodo}){
+    return(
+        <TextInput
+            value={value}
+            onChangeText={changeText}
+            onEndEditing={addTodo}
 
+            style ={styles.input}
+            placeholder="Todo List 추가하기"
+            maxLength={50}
+            returnKeyType="done"/>
+    );
+};
+
+const { width,height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     input:{
@@ -19,7 +23,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         marginTop:10,
         marginBottom:20,
+        borderWidth:1,
+        width : width-80,
     },
 });
-
-export default Input;
