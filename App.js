@@ -4,6 +4,7 @@ import Header from './app/components/Header';
 import Subtitle from './app/components/Subtitle';
 import Input from './app/components/Input';
 import TodoItem from './app/components/TodoItem';
+import Footer from './app/components/footer';
 
 export default class App extends React.Component {
   constructor(props){
@@ -13,15 +14,6 @@ export default class App extends React.Component {
       todos:[
         {
           title: "여기에",
-        },
-        {
-          title:"추가한",
-        },
-        {
-          title:"사항이",
-        },
-        {
-          title:"표시됩니다.",
         },
       ]
     }
@@ -92,6 +84,9 @@ export default class App extends React.Component {
           keyExtractor={(item,index) => { return `${index}`}}
           />
         </View>
+        <View style={styles.footercontainer}>
+          <Footer/>
+        </View>
       </View>
     );
   }
@@ -112,5 +107,9 @@ const styles = StyleSheet.create({
   subtitle_layout:{
     backgroundColor: '#eee',
     overflow: 'scroll',
+    borderRadius :25,
+  },
+  footercontainer:{
+    
   },
 });

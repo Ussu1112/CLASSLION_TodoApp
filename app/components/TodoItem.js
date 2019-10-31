@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
         padding : 5,
         marginTop: 10,
         marginBottom : 5,
-        borderBottomWidth:1,
         width : width-40,
         flexDirection:"row",
         alignItems:"center",
@@ -39,12 +38,14 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize:20,
         fontWeight:"bold",
+        borderBottomWidth:1,
+        paddingBottom:3,
     },
     makerow:{
         flexDirection:"row",
     },
     check:{
-        marginRight:10,
+        marginRight:5,
     },
     close:{
         marginLeft:0,
